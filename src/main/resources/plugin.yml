@@ -1,0 +1,4 @@
+name: GFLUtils
+version: '1.0'
+main: social.gfl.MochaMilkie.GFLUtils.GFLUtils
+api-version: '1.21'
