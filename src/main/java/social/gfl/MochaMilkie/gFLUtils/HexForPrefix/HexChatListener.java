@@ -24,4 +24,5 @@ public class HexChatListener implements Listener {
         event.setMessage(message);
 
     }
+
 }
