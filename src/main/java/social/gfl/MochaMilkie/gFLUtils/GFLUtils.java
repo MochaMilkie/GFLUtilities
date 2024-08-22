@@ -6,8 +6,10 @@ import social.gfl.MochaMilkie.GFLUtils.HexForPrefix.HexChatListener;
 import social.gfl.MochaMilkie.GFLUtils.HexForPrefix.HexConfig;
 import social.gfl.MochaMilkie.GFLUtils.ParticleSystem.ParticlePlayerJoinListener;
 
+import java.io.IOException;
+
 public final class GFLUtils extends JavaPlugin {
-    public HexConfig hexConfig;
+    public DataManager data;
 
     @Override
     public void onEnable() {
@@ -15,11 +17,15 @@ public final class GFLUtils extends JavaPlugin {
         //saveDefaultConfig();
 
         //Register events for HexForPrefix
-        if(hexConfig.hexConfig().getBoolean("enabled")) {
-            getLogger().info("GFLUtils module: Automatically decode hex codes before the players message is Enabled");
-            Bukkit.getPluginManager().registerEvents(new HexChatListener(), this);
-        }
-        else{
+        try {
+            if(data.customConfig("Hex").getBoolean("enabled")) {
+                getLogger().info("GFLUtils module: Automatically decode hex codes before the players message is Enabled");
+                Bukkit.getPluginManager().registerEvents(new HexChatListener(), this);
+            }
+            else{
+                getLogger().info("GFLUtils module: Automatically decode hex codes before the players message is Disabled");
+            }
+        } catch (IOException e) {
             getLogger().info("GFLUtils module: Automatically decode hex codes before the players message is Disabled");
         }
 
