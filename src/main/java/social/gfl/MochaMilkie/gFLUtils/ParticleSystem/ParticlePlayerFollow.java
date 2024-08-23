@@ -20,12 +20,6 @@ public class ParticlePlayerFollow implements Listener {
         double x = player.getLocation().getX();
         double y = player.getLocation().getY();
         double z = player.getLocation().getZ();
-        Bukkit.getScheduler().runTaskLater(plugin, new Runnable() {
-            @Override
-            public void run() {
-                player.getWorld().spawnParticle(Particle.ANGRY_VILLAGER, x,y,z,1);
-
-            }
-        }, 5);
+        Bukkit.getScheduler().runTaskLater(plugin, () -> player.getWorld().spawnParticle(Particle.ANGRY_VILLAGER, x,y,z,2), 1);
     }
 }
