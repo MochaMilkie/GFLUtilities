@@ -13,7 +13,7 @@ public final class GFLUtils extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        //SaveDefaultConfig ... xD
+        //Save Default Config ... xD
         //saveDefaultConfig();
 
         //Register events for HexForPrefix

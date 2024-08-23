@@ -20,17 +20,16 @@ public class HexConfig {
     public void createConfig() throws IOException, InvalidConfigurationException {
         configFile = new File(plugin.getDataFolder()+File.separator+"Hex.yml");
         config = new YamlConfiguration();
+        config.addDefault("enabled" , false);
         config.save(configFile);
 
     }
 
-    public void loadConfig() throws IOException, InvalidConfigurationException {
+    public YamlConfiguration loadConfig() throws IOException, InvalidConfigurationException {
         configFile = new File(plugin.getDataFolder() + File.separator + "Hex.yml");
         config = new YamlConfiguration();
         config.load(configFile);
+        return config;
     }
 
-    public YamlConfiguration hexConfig(){
-        return this.config;
-    }
 }
