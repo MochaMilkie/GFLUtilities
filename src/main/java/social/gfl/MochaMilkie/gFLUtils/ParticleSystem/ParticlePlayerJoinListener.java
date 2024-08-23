@@ -21,7 +21,10 @@ public class ParticlePlayerJoinListener implements Listener {
         Player player = event.getPlayer();
         if(player.hasPermission("GFLUtils.particlesOnJoin")){
             Location loc = player.getLocation();
-            Bukkit.getScheduler().runTaskLater(plugin, () -> player.getWorld().spawnParticle(Particle.TOTEM_OF_UNDYING , loc , 5), 20);
+            double x = loc.getX()+1;
+            double y = loc.getY()+1;
+            double z = loc.getZ();
+            Bukkit.getScheduler().runTaskLater(plugin, () -> player.getWorld().spawnParticle(Particle.TOTEM_OF_UNDYING , x, y , z, 5), 20);
         }
     }
 }

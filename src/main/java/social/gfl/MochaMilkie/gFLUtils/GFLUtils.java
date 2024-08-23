@@ -3,7 +3,6 @@ package social.gfl.MochaMilkie.GFLUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import social.gfl.MochaMilkie.GFLUtils.HexForPrefix.HexChatListener;
-import social.gfl.MochaMilkie.GFLUtils.HexForPrefix.HexConfig;
 import social.gfl.MochaMilkie.GFLUtils.ParticleSystem.ParticlePlayerJoinListener;
 
 import java.io.IOException;
