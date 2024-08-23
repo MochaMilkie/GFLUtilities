@@ -32,6 +32,7 @@ public class DataManager {
     public void createConfigFile(String s) throws IOException {
         //if no file, now file.
         configFile = new File(plugin.getDataFolder()+File.separator + s);
+        config.addDefault("enabled" , false);
         config.save(configFile);
     }
 }
