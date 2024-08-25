@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import social.gfl.MochaMilkie.GFLUtils.HexForPrefix.HexChatListener;
 import social.gfl.MochaMilkie.GFLUtils.ParticleSystem.ParticlePlayerFollow;
 import social.gfl.MochaMilkie.GFLUtils.ParticleSystem.ParticlePlayerJoinListener;
+import social.gfl.MochaMilkie.GFLUtils.ParticleSystem.TrailCommand;
 
 import java.io.IOException;
 
@@ -34,7 +35,8 @@ public final class GFLUtils extends JavaPlugin {
 
         //Register Particle System
         //Bukkit.getPluginManager().registerEvents(new ParticlePlayerJoinListener(this) , this);
-        //Bukkit.getPluginManager().registerEvents(new ParticlePlayerFollow(this), this);
+        Bukkit.getPluginManager().registerEvents(new ParticlePlayerFollow(this), this);
+        getCommand("trail").setExecutor(new TrailCommand());
 
         // Plugin startup logic
 
