@@ -21,7 +21,7 @@ public class ParticlePlayerFollow implements Listener {
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent e) throws IOException {
         DataManager data = new DataManager(plugin);
-        YamlConfiguration config = data.customConfig("ParticleTrails");
+        YamlConfiguration config = data.customConfig("Particle");
         //make player the player
         Player player = e.getPlayer();
         String UUID = player.getUniqueId().toString();
@@ -30,9 +30,11 @@ public class ParticlePlayerFollow implements Listener {
         } else if (!config.getBoolean(UUID + ".enabled")) {
             return;
         }
-        double x = player.getLocation().getX();
-        double y = player.getLocation().getY();
-        double z = player.getLocation().getZ();
-        Bukkit.getScheduler().runTaskLater(plugin, () -> player.getWorld().spawnParticle(Particle.ANGRY_VILLAGER, x,y,z,1), 1);
+        if(config.getString(UUID+".selection") == "vEgg"){
+            double x = player.getLocation().getX();
+            double y = player.getLocation().getY();
+            double z = player.getLocation().getZ();
+            Bukkit.getScheduler().runTaskLater(plugin, () -> player.getWorld().spawnParticle(Particle.ANGRY_VILLAGER, x,y,z,10), 1);
+        }
     }
 }
