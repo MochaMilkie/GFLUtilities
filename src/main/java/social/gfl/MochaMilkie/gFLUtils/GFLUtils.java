@@ -1,11 +1,9 @@
 package social.gfl.MochaMilkie.GFLUtils;
 
 import org.bukkit.Bukkit;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import social.gfl.MochaMilkie.GFLUtils.HexForPrefix.HexChatListener;
 import social.gfl.MochaMilkie.GFLUtils.ParticleSystem.ParticlePlayerFollow;
-import social.gfl.MochaMilkie.GFLUtils.ParticleSystem.ParticlePlayerJoinListener;
 import social.gfl.MochaMilkie.GFLUtils.ParticleSystem.TrailCommand;
 
 import java.io.IOException;
