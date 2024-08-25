@@ -1,6 +1,7 @@
 package social.gfl.MochaMilkie.GFLUtils;
 
 import org.bukkit.Bukkit;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import social.gfl.MochaMilkie.GFLUtils.HexForPrefix.HexChatListener;
 import social.gfl.MochaMilkie.GFLUtils.ParticleSystem.ParticlePlayerFollow;
@@ -29,10 +30,11 @@ public final class GFLUtils extends JavaPlugin {
         } catch (IOException e) {
             getLogger().info("GFLUtils module: Automatically decode hex codes before the players message is Disabled");
         }
+        Bukkit.getPluginManager().registerEvents(new TotemVoidSave(this), this);
 
         //Register Particle System
-        Bukkit.getPluginManager().registerEvents(new ParticlePlayerJoinListener(this) , this);
-        Bukkit.getPluginManager().registerEvents(new ParticlePlayerFollow(this), this);
+        //Bukkit.getPluginManager().registerEvents(new ParticlePlayerJoinListener(this) , this);
+        //Bukkit.getPluginManager().registerEvents(new ParticlePlayerFollow(this), this);
 
         // Plugin startup logic
 
