@@ -8,8 +8,8 @@ permissions:
     description: Allows players to assign a custom particle trail. VIP Perk
 
 commands:
-  trail:
-    description: Allows players with permission to assign a custom particle trail.
-    usage: /trail
-    permission: GFLUtils.particletrail
-    permission-message: You do not have access to this command, if you feel this is an error contact Benroy. (GFLUtils.particletrail)
+  GFLreload:
+    description: Reload plugin and register events based on config.yml
+    usage: /GFLReload
+    permission: GFLUtils.admin
+    permission-message: You do not have access to this command, if you feel this is an error contact Benroy. (GFLUtils.admin)
