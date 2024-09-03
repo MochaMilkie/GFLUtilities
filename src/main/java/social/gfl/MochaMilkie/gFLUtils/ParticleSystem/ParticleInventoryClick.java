@@ -26,10 +26,17 @@ public class ParticleInventoryClick implements Listener {
         String uuid = player.getUniqueId().toString();
 
         if(event.getCurrentItem() == null) return;
+        if(event.getCurrentItem().isSimilar(plugin.particleHash.get("disable"))){
+            event.setCancelled(true);
+            player.closeInventory();
+            data.customConfig().set(uuid+".enabled" , false);
+            data.saveConfig();
+        }
         if(event.getCurrentItem().isSimilar(plugin.particleHash.get("vEgg"))){
             event.setCancelled(true);
             player.closeInventory();
             data.customConfig().set(uuid+".enabled" , true);
+            data.saveConfig();
             data.customConfig().set(uuid+".selection" , "vEgg");
             data.saveConfig();
             player.sendMessage("Your trail has been set to Angry Villager.");
@@ -38,15 +45,26 @@ public class ParticleInventoryClick implements Listener {
             event.setCancelled(true);
             player.closeInventory();
             data.customConfig().set(uuid+".enabled" , true);
+            data.saveConfig();
             data.customConfig().set(uuid+".selection" , "redstone");
-            data.saveConfig( );
+            data.saveConfig();
             player.sendMessage("Your trail has been set to Redstone Dust.");
         }
         if(event.getCurrentItem().isSimilar(plugin.particleHash.get("waterBucket"))){
             event.setCancelled(true);
             player.closeInventory();
             data.customConfig().set(uuid+".enabled" , true);
+            data.saveConfig();
             data.customConfig().set(uuid+".selection" , "waterBucket");
+            data.saveConfig();
+            player.sendMessage("Your trail has been set to Water Droplets.");
+        }
+        if(event.getCurrentItem().isSimilar(plugin.particleHash.get("damage"))){
+            event.setCancelled(true);
+            player.closeInventory();
+            data.customConfig().set(uuid+".enabled" , true);
+            data.saveConfig();
+            data.customConfig().set(uuid+".selection" , "damage");
             data.saveConfig();
             player.sendMessage("Your trail has been set to Water Droplets.");
         }

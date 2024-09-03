@@ -22,11 +22,12 @@ public class ParticleConfigManager{
         //String being passed along is to know which config to load.
         //Declare file path
         //ALWAYS DELCARE CONFIG AS NEW YAMLCONFIGURATION OR NO WORK
-        configFile = new File(plugin.getDataFolder() + File.separator + "Particle");
+        configFile = new File(plugin.getDataFolder() + File.separator + "Particle.yml");
         try {
             //Attempt to load the file
             config = new YamlConfiguration();
             config.load(configFile);
+            return config;
         } catch (InvalidConfigurationException | IOException e) {
             createConfigFile();
         }
@@ -48,7 +49,7 @@ public class ParticleConfigManager{
         //if no file, now file.
         //ALWAYS DELCARE CONFIG AS NEW YAMLCONFIGURATION OR NO WORK
         config = new YamlConfiguration();
-        configFile = new File(plugin.getDataFolder()+File.separator + "Particle");
+        configFile = new File(plugin.getDataFolder()+File.separator + "Particle.yml");
         config.addDefault("enabled" , false);
         config.save(configFile);
         plugin.particleConfig = config;

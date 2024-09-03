@@ -47,6 +47,8 @@ public class ParticlePlayerFollow implements Listener {
             case "waterBucket":
                 player.getWorld().spawnParticle(Particle.DRIPPING_WATER, x, y, z, 1);
                 return;
+            case "damage":
+                player.getWorld().spawnParticle(Particle.DAMAGE_INDICATOR , x,y,z, 2);
             case null:
                 return;
             default:

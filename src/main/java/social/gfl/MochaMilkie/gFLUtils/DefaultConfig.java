@@ -7,6 +7,7 @@ public class DefaultConfig {
     public void setupConfig(){
         plugin.getConfig().addDefault("Hex.enabled" , false);
         plugin.getConfig().addDefault("ParticleTrail.enabled" , false);
+        plugin.getConfig().addDefault("GUIConfig.enabled" , true);
 
 
         plugin.getConfig().options().copyDefaults(true);
