@@ -2,3 +2,21 @@ name: GFLUtils
 version: '1.0'
 main: social.gfl.MochaMilkie.GFLUtils.GFLUtils
 api-version: '1.21'
+
+permissions:
+  GFLUtils.particletrail:
+    description: Allows players to assign a custom particle trail. VIP Perk
+
+
+commands:
+  gflreload:
+    description: Reload plugin and register events based on config.yml
+    usage: /gflreload
+    permission: GFLUtils.admin
+    permission-message: You do not have access to this command, if you feel this is an error contact Benroy. (GFLUtils.admin)
+
+  Trail:
+    description: Set a custom particle trail.
+    usage: /trail
+    permission: GFLUtils.ParticleTrail
+    permission-message: You do not have access to this command, if you feel this is an error contact Benroy. (GFLUtils.admin)
